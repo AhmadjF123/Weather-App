@@ -5,11 +5,11 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <section className="bg-primary text-white px-10 py-5">
+      <section className="bg-primary text-white md:px-10 pr-10 py-5">
         <div className="flex justify-between items-center md:px-20">
-          <div className="w-[75%] flex flex-col">
+          <div className="flex flex-col w-fit p-0">
             <img className="w-[250px]" src="weatherApp-logo.png" alt="" />
-            <h2 className="md:ml-20 ml-17">WEATHERLY</h2>
+            <h2 className="md:ml-20 ml-20">WEATHERLY</h2>
           </div>
 
           <div className="hidden md:block">
@@ -43,7 +43,7 @@ function Navbar() {
 
         {/* sideBar */}
         <div
-          className={`fixed -left-[250px] top-0 w-[50%] md:hidden bg-secondary h-screen transition-all duration-300 ${
+          className={`fixed -left-250 top-0 w-[50%] md:hidden bg-secondary h-screen transition-all duration-300 ${
             isMenuOpen ? "left-0" : ""
           }`}
         >
