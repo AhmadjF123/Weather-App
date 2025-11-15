@@ -8,3 +8,36 @@
 /* *{
   background-color: #011030;
 } */
+
+.cloudy-bg {
+  background-image: url("/public/cloudy.jpeg");
+
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sunny-bg {
+  background-image: url("/public/sunny.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rainy-bg {
+  background-image: url("/public/rainy.webp");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.default-bg {
+  background-image: url("/public/default.png");
+  height: 100vh;
+  background-position: center;
+  background-size: contain;
+
+}

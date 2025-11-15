@@ -5,7 +5,7 @@ import { WiHumidity } from "react-icons/wi";
 import { WiStrongWind } from "react-icons/wi";
 import WeatherCard from "./WeatherCard";
 
-function HeroSection() {
+function HeroSection({ setWeather, setError }) {
   const API_KEY = "efe12ef8e55934cc2d450956242ebd1d";
 
   const [city, setCity] = useState("");
@@ -14,9 +14,11 @@ function HeroSection() {
 
   const handleSearch = async () => {
     setErrorMessage("");
+    setError(false);
 
     if (city.trim() === "") {
       setErrorMessage("Please enter a city name");
+      setError(true);
       return;
     }
     const res = await fetch(
@@ -25,15 +27,17 @@ function HeroSection() {
 
     const result = await res.json();
 
-    // اذا المدينة غير موجودة
     if (result.cod === "404") {
       setErrorMessage(`No city called "${city}"`);
+      setError(true);
       setData(null);
-      setCity("")
+      setCity("");
       return;
     }
 
     setData(result);
+    setWeather(result.weather[0].main);
+    setError(false);
     setCity("");
   };
 
@@ -46,11 +50,11 @@ function HeroSection() {
 
   return (
     <>
-      <section className="">
-        <form className="mt-4 flex justify-center items-center gap-2" action="">
+      <section>
+        <form className="flex pt-4 justify-center items-center gap-2" action="">
           <input
-          placeholder="Search location..."
-            className="border px-4 rounded-3xl w-[250px] h-[30px]"
+            placeholder="Search location..."
+            className="border px-4 rounded-3xl w-[250px] h-[30px] focus:outline-none"
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
