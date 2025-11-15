@@ -49,6 +49,7 @@ function HeroSection() {
       <section className="">
         <form className="mt-4 flex justify-center items-center gap-2" action="">
           <input
+          placeholder="Search location..."
             className="border px-4 rounded-3xl w-[250px] h-[30px]"
             type="text"
             value={city}
