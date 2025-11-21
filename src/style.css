@@ -5,9 +5,7 @@
   --color-secondary: #0b1c3a;
 }
 
-/* *{
-  background-color: #011030;
-} */
+
 
 .cloudy-bg {
   background-image: url("/public/cloudy.jpeg");
